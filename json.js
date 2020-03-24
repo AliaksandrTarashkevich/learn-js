@@ -1,0 +1,7 @@
+let user = {
+  name: "Василий Иванович",
+  age: 35
+};
+
+let juser = JSON.parse(JSON.stringify(user));
+console.log(juser);
