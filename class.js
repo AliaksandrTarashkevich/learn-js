@@ -28,13 +28,35 @@
 
 // new User().sayHi();
 //?=====================================
-function makeClass(phrase) {
-  return class {
-    sayHi() {
-      console.log(phrase);
-    };
-  };
+// function makeClass(phrase) {
+//   return class {
+//     sayHi() {
+//       console.log(phrase);
+//     };
+//   };
+// }
+
+// let User = makeClass('Whaza');
+// new User().sayHi();
+//?=====================================
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+  get name() {
+    return this._name;
+  }
+  set name(value) {
+    if(value.length < 4) {
+      console.log('Too small =(');
+      return;
+    }
+    this._name = value;
+  }
+
 }
 
-let User = makeClass('Whaza');
-new User().sayHi();
+let user = new User('Ivan');
+console.log(user.name);
+
+user = new User('');
