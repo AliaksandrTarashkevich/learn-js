@@ -39,24 +39,34 @@
 // let User = makeClass('Whaza');
 // new User().sayHi();
 //?=====================================
-class User {
-  constructor(name) {
-    this.name = name;
-  }
-  get name() {
-    return this._name;
-  }
-  set name(value) {
-    if(value.length < 4) {
-      console.log('Too small =(');
-      return;
-    }
-    this._name = value;
-  }
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   get name() {
+//     return this._name;
+//   }
+//   set name(value) {
+//     if(value.length < 4) {
+//       console.log('Too small =(');
+//       return;
+//     }
+//     this._name = value;
+//   }
 
+// }
+
+// let user = new User('Ivan');
+// console.log(user.name);
+
+// user = new User('');
+//?======================================
+class User {
+  name = "Anonynous";
+
+  sayHi() {
+    console.log(`Hi, ${this.name}!`);
+  }
 }
 
-let user = new User('Ivan');
-console.log(user.name);
-
-user = new User('');
+new User().sayHi();
